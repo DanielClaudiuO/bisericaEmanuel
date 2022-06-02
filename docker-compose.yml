@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  app:
+    image: node:17-alpine
+    container_name: "bisericaEmanuel"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - .:/app
+    user: ${CURRENT_UID}
+
+    command: 
+     - /bin/sh
+     - -c
+     - |
+       tail -f /dev/null
